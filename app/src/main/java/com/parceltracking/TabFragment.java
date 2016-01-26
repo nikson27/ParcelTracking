@@ -67,7 +67,7 @@ public class TabFragment extends Fragment {
               case 1 : return new DetailsFragment();
               case 2 : return new MapFragment();
           }
-        return null;
+        return new SearchFragment();
         }
 
         @Override
