@@ -2,214 +2,221 @@
 <items version="2" >
 
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="3178362320bcf51228835b60ff978efadfd1f783">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-5993ef0225712c85bd24da11ffaade0c7a45e971.jar" />
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-9114592d61aec09e862b02a8d9e8553b110703de.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-45e95f6695c72c64794c5e4de2ac92882d41e01a.jar" />
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-d170162c5c0a068dbf73a99818bf220e2a807ebd.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-1778cbde63ce68152d94d3de8c4ec771fc7436e0.jar" />
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-857b475fc1fd24e837816d84888f8131b2a1d457.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-13c7f9c8f644564a7d558d3227a440215eec230d.jar" />
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-8f0ff2043c843b85512b38d843a91a68e6f95e9e.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-712954ff778902b256643e37bb9364fdd8cb3242.jar" />
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-fe6c12d608bbe379d8ab9f7ff858581afacd0dbc.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-5bbd734335f50aa85dfc0f20c4e35504df9edcfc.jar" />
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-3482100107e6f0a94152da270c70227f74d75b18.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d61920aba361832a9545a43fa8c9453eb02f18f7">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-71783b618a7b5b525ec4b5bbfbb0662ffead3b52.jar" />
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-d8f686c753d237b6188ecf3726bfee78f3626eb5.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-d0c6083d182dfc167d80e857e3c832033a329b72.jar" />
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-5b76f4b9d3c21120103f757e718688d130d7c1bc.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-da693ca1dc9dee8a714347237abae3ebfb6fce98.jar" />
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-fffad6f9daea6ef15248f6c151e5d338badf9aa1.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-82df20aa74085e504b1e40b97e46168cd536dce9.jar" />
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-7b1b20ec286b23ef09e373bd0230a2c05accf25a.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="95758a2905669affbffc5ddd262921d375674fad">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-7976aac5e149ef39e63e8bf19002e11b68345581.jar" />
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-e222ee3cfc67cae4e99890f2fb129cd63939108d.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.3.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-eea2641b6692a9fde6ba21a759ac09c677cb28ad.jar" />
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-6669d4f259a6d191882814f015f1e7bd2afed79c.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-da9d29f8be7ed6d1331d01b7f32376ebe43ccda6.jar" />
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-6f4f32ac90e9c3c13c323b2dd5f1227dab97463b.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-e1470359a6edd0f3351855acea192cd6dd9d28f0.jar" />
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-9dc26577f63232d15d5e75b464381a933f0b36f5.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-4e538cd71abdcc80139146fcc4b3362721a057ee.jar" />
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-f93cc0e9258d9f437bec50995c0ccf5b887015d8.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-f8e8f2675b81eae647d174bd58901f86564ff0f0.jar" />
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-150b2e07ed7155e87c352be1df9787e7a90dcfda.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-6db964bfa6bda8c0c9a8aa31d6b2fe9d4dc78ee7.jar" />
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-3c86f43efaede44fcdb0bf7c406eeb4cd86dbb24.jar" />
     </item>
     <item
-        jar="C:\Users\ioan.contiu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-f2215ea19a204529d8b6f52d5027aa16fd8015a8.jar" />
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-3561784acf5075d3db15432a567364d4c3cc9cfe.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-5eb866e88f597868c255f477eb427a5c7446051a.jar" />
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-9dc8da58ce0ca73814a749f531078f4ddce08c3d.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="17449c47df35c754b257532052f1270c444f7993">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-6aa0c315d77fac3d55459477fab6411af541ba7a.jar" />
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-60af18c83f0121ad0f489d340d075df6db9ee7dc.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-a69fd1b812ee4458f3a39d7c5b8a2dd4c972f5f4.jar" />
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-dc2a963ed369ff8ccc78f4f3663078a2cc1780af.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-33d9cf9cf4c18d47eca1a09514675764b32faf76.jar" />
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-ff31c55e53a44b50e2db22deec7f2bdfdce074e7.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\jars\classes.jar"
+        jar="C:\Users\ioan.contiu\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="482de223655d06253cc6a4955d653f8994169500">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-c6864ebd71527f0e5d9ba0da082c9da41549900f.jar" />
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-5fca908bb695fdc0c963fa511c1a0313dda03190.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-97ed81d78ed210a0f4cea2a1dbf13de85177592d.jar" />
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-b66a0b04f784624e2dbc740a56e1d3c4fe5faf57.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="997773777cf3904c11d6764fe3b7668538220e49">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-dd27d0e803de17eac4cadd38c12886a2ba128590.jar" />
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-fc7e65abcf409b94b878cc87b8fb89c6b628ecd9.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-d12155e317258493fb590a41fcd46f9c87adcc17.jar" />
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-ef9a73faf164623646163e431c0471c3c40edaea.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-6c4c36eb32e1fa95bfacf4c75a7fef7489d47fa2.jar" />
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-395bdb79d047f2dc00110fe1c2ab54e57a6cd17e.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-1172eef43f1aff4d6c09cb7555b56b3e1e0235b3.jar" />
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-a9bcd3bb251ad2b92b364d804e75533197d055f3.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-36297d9921dc648aca6b6d9f9dd6c5392a213972.jar" />
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-6f51b24bf7e8f8ef66978f4956964d920561f513.jar" />
     </item>
     <item
-        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.1.0\jars\classes.jar"
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
-        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-5436860f3a3894731a0c690194c15a98757b5918.jar" />
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-226e50b566cda54a672a2072121ed6fa1c1cb3d1.jar" />
+    </item>
+    <item
+        jar="D:\facultate\licenta\ParcelTracking\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="D:\facultate\licenta\ParcelTracking\app\build\intermediates\pre-dexed\debug\classes-d8545b596b9c8d13f84f1504c71f6bb0532d44d6.jar" />
     </item>
 
 </items>

@@ -1,5 +1,7 @@
 package com.parceltracking;
 
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -9,10 +11,17 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+
+import com.parceltracking.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     NavigationView mNavigationView;
+    Button btnLogIn;
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
 
@@ -21,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         /**
          *Setup the DrawerLayout and NavigationView
          */
 
              mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
              mNavigationView = (NavigationView) findViewById(R.id.navigationMenu) ;
+             btnLogIn=(Button)findViewById(R.id.Login);
 
         /**
          * Lets inflate the very first fragment
@@ -39,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
         /**
          * Setup click events on the Navigation View Items.
          */
+
+
+            btnLogIn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+            });
 
              mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
              @Override
@@ -67,13 +87,15 @@ public class MainActivity extends AppCompatActivity {
          * Setup Drawer Toggle of the Toolbar
          */
 
-               // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-              //  ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout, toolbar,R.string.app_name,
-            //    R.string.app_name);
+                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+                ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout, toolbar,R.string.app_name,
+                R.string.app_name);
 
-              //  mDrawerLayout.setDrawerListener(mDrawerToggle);
+                mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-             //   mDrawerToggle.syncState();
+                mDrawerToggle.syncState();
 
     }
+
+
 }
