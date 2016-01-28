@@ -11,11 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.parceltracking.map.MapFragment;
+
 public class TabFragment extends Fragment {
 
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
     public static int int_items = 3 ;
+    public static final SearchFragment searchFragment=new SearchFragment();
+    public static final DetailsFragment detailsFragment=new DetailsFragment();
+    public static final MapFragment mapFragment=new MapFragment();
 
     @Nullable
     @Override
@@ -48,6 +53,12 @@ public class TabFragment extends Fragment {
         return x;
 
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
 
     class MyAdapter extends FragmentPagerAdapter{
 
@@ -95,5 +106,6 @@ public class TabFragment extends Fragment {
                 return null;
         }
     }
+
 
 }

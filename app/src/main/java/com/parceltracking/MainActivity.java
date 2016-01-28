@@ -3,7 +3,9 @@ package com.parceltracking;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -17,8 +19,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.parceltracking.login.LoginActivity;
+import com.parceltracking.map.MapStateManager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     DrawerLayout mDrawerLayout;
     NavigationView mNavigationView;
     Button btnLogIn;
@@ -97,5 +100,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 }
