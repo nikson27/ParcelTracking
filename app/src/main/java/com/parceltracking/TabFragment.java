@@ -1,11 +1,16 @@
 package com.parceltracking;
 
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +26,7 @@ public class TabFragment extends Fragment {
     public static final SearchFragment searchFragment=new SearchFragment();
     public static final DetailsFragment detailsFragment=new DetailsFragment();
     public static final MapFragment mapFragment=new MapFragment();
+    public static int pos=2;
 
     @Nullable
     @Override
@@ -29,6 +35,7 @@ public class TabFragment extends Fragment {
          *Inflate tab_layout and setup Views.
          */
             View x =  inflater.inflate(R.layout.tab_layout,null);
+
             tabLayout = (TabLayout) x.findViewById(R.id.tabs);
             viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
@@ -36,6 +43,9 @@ public class TabFragment extends Fragment {
          *Set an Apater for the View Pager
          */
         viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
+       // viewPager.setCurrentItem(pos);
+
+
 
         /**
          * Now , this is a workaround ,
@@ -55,12 +65,25 @@ public class TabFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        pos=viewPager.getCurrentItem();
     }
 
 
-    class MyAdapter extends FragmentPagerAdapter{
+    class MyAdapter extends FragmentStatePagerAdapter {
 
         public MyAdapter(FragmentManager fm) {
             super(fm);
@@ -88,6 +111,9 @@ public class TabFragment extends Fragment {
 
         }
 
+
+
+
         /**
          * This method returns the title of the tab according to the position.
          */
@@ -106,6 +132,8 @@ public class TabFragment extends Fragment {
                 return null;
         }
     }
+
+
 
 
 }

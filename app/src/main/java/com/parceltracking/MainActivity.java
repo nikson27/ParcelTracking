@@ -1,5 +1,6 @@
 package com.parceltracking;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -27,7 +29,8 @@ public class MainActivity extends AppCompatActivity  {
     Button btnLogIn;
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
-
+    Toolbar toolbar;
+    ActionBarDrawerToggle mDrawerToggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,8 +93,8 @@ public class MainActivity extends AppCompatActivity  {
          * Setup Drawer Toggle of the Toolbar
          */
 
-                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-                ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout, toolbar,R.string.app_name,
+                toolbar = (Toolbar) findViewById(R.id.toolbar);
+                mDrawerToggle  = new ActionBarDrawerToggle(this,mDrawerLayout, toolbar,R.string.app_name,
                 R.string.app_name);
 
                 mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -108,5 +111,18 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
+
+           toolbar.setVisibility(View.GONE);
+        }
+        else
+        {
+            toolbar.setVisibility(View.VISIBLE);
+        }
     }
 }
