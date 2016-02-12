@@ -36,5 +36,16 @@
              android:icon="@drawable/help"/>
     </group>
 
+    <group android:id="@+id/group_user_id">
+
+        <item android:title="Login"
+            android:id="@+id/nav_item_login"
+            android:icon="@drawable/common_google_signin_btn_icon_dark"/>
+        <item android:title="Register"
+            android:id="@+id/nav_item_signup"
+            android:icon="@drawable/common_google_signin_btn_icon_light"/>
+
+    </group>
+
 
 </menu>

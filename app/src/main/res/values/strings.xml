@@ -21,4 +21,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!-- Query strings-->
+    <string name="login">http://localhost:81/TrackingParcelBackEnd/login.php</string>
 </resources>

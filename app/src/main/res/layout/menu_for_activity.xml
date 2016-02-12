@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android:android.support.design.widget.NavigationView
+    android:id="@+id/navigation_drawer_container"
+    layout_width="300dp"
+    layout_height="match_parent"
+    android:layout_gravity="start"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@android:color/holo_blue_dark"
+        android:id="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Parcel Tracking" />
+<android.support.design.widget.NavigationView
+    android:id="@+id/navigationMenu"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="top"
+    android:layout_marginBottom="50dp"
+    app:itemTextColor="@android:color/holo_blue_dark"
+    app:headerLayout="@layout/header"
+    app:menu="@menu/drawermenu" />
+
+<android.support.design.widget.NavigationView
+    android:id="@+id/navigation_drawer_bottom"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_gravity="bottom">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:columnCount="2"
+        android:rowCount="1">
+        <Button
+            android:id="@+id/Login"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="Login"
+            android:background="@android:color/holo_blue_dark" />
+
+        <Button
+            android:id="@+id/SignUp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="SignUp"
+            android:background="@android:color/holo_blue_dark" />
+
+    </GridLayout>
+
+</android.support.design.widget.NavigationView>
+
+</android:android.support.design.widget.NavigationView>
