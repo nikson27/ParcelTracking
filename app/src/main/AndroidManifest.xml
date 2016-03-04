@@ -43,20 +43,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.parceltracking.login.LoginActivity" />
-        <activity android:name="com.parceltracking.signup.SignUpActivity" />
-        <activity android:name="com.parceltracking.user.TabsViewPagerFragmentActivity" />
-        <activity android:name="com.parceltracking.TabsActivity" />
-        <activity android:name="com.parceltracking.image.AndroidLoadImageFromURLActivity" />
+        <activity android:name="com.parceltracking.user.login.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name="com.parceltracking.TabsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name="com.parceltracking.user.signup.RegisterActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name="com.parceltracking.user.profile.UpdateProfileActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name="com.parceltracking.image.AndroidLoadImageFromURLActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
 
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
-        -->
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />

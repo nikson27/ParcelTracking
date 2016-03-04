@@ -19,27 +19,18 @@ public class AndroidLoadImageFromURLActivity extends BaseActivity {
         getLayoutInflater().inflate(R.layout.image_load, frameLayout);
 
         ImageView imageView = (ImageView) findViewById(R.id.image);
-        String imageUrl = "http://api.androidhive.info/images/sample.jpg";
+        String imageUrl = "https://www.google.ro/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png";
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.init(ImageLoaderConfiguration.createDefault(getApplicationContext()));
         imageLoader.displayImage(imageUrl, imageView);
-        // Loader image - will be shown before loading image
-        int loader = R.drawable.transfer;
 
-        // Imageview to show
-      //  ImageView image = (ImageView) findViewById(R.id.image);
-//
-        // Image url
-      //  String image_url = "http://api.androidhive.info/images/sample.jpg";
+        ImageView imageView2 = (ImageView) findViewById(R.id.image2);
+        String imageUrl2 = "https://www.google.ro/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png";
+        ImageLoader imageLoader2 = ImageLoader.getInstance();
+        imageLoader2.init(ImageLoaderConfiguration.createDefault(getApplicationContext()));
+        imageLoader2.displayImage(imageUrl2, imageView2);
 
-        // ImageLoader class instance
-       // ImageLoader imgLoader = new ImageLoader(getApplicationContext());
 
-        // whenever you want to load an image from url
-        // call DisplayImage function
-        // url - image url to load
-        // loader - loader image, will be displayed before getting image
-        // image - ImageView
-      //  imgLoader.DisplayImage(image_url, loader, image);
+
     }
 }

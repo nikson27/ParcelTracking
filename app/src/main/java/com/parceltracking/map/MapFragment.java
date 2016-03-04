@@ -31,12 +31,11 @@ import com.parceltracking.R;
 import com.parceltracking.map.MapStateManager;
 
 
-public class MapFragment extends Fragment  {
+public class MapFragment extends Fragment {
     MapView mapView;
     GoogleMap map;
     Marker marker;
     LatLng currentLocation;
-
 
 
     @Nullable
@@ -63,7 +62,7 @@ public class MapFragment extends Fragment  {
                     map = mapView.getMap();
                     map.getUiSettings().setMyLocationButtonEnabled(true);
 
-                   if (ContextCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
+                    if (ContextCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
                             != PackageManager.PERMISSION_GRANTED) {
                         // TODO: Consider calling
                         //    public void requestPermissions(@NonNull String[] permissions, int requestCode)
@@ -83,11 +82,11 @@ public class MapFragment extends Fragment  {
                 Toast.makeText(getActivity(), "Google play services are missing", Toast.LENGTH_SHORT).show();
                 break;
             case ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED:
-                Toast.makeText(getActivity(), "Google play services update are required", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Google play services update is required", Toast.LENGTH_SHORT).show();
                 break;
-            default: Toast.makeText(getActivity(), GooglePlayServicesUtil.isGooglePlayServicesAvailable(getActivity()), Toast.LENGTH_SHORT).show();
+            default:
+                Toast.makeText(getActivity(), GooglePlayServicesUtil.isGooglePlayServicesAvailable(getActivity()), Toast.LENGTH_SHORT).show();
         }
-
 
 
         map.setOnMyLocationChangeListener(myLocationChangeListener);
@@ -100,34 +99,35 @@ public class MapFragment extends Fragment  {
     private GoogleMap.OnMyLocationChangeListener myLocationChangeListener = new GoogleMap.OnMyLocationChangeListener() {
         @Override
         public void onMyLocationChange(Location location) {
-             currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
+            currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
 
-           // map.clear();
+            // map.clear();
             marker = map.addMarker(new MarkerOptions().position(currentLocation));
-            if(map != null){
+            if (map != null) {
                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 16.0f));
             }
         }
     };
 
 
-
     @Override
     public void onResume() {
         mapView.onResume();
         super.onResume();
-        MapStateManager mapStateManager=new MapStateManager(getActivity());
-        CameraPosition position=mapStateManager.getSavedCameraPosition();
-        if(position!=null){
-            CameraUpdate update= CameraUpdateFactory.newCameraPosition(position);
+        MapStateManager mapStateManager = new MapStateManager(getActivity());
+        CameraPosition position = mapStateManager.getSavedCameraPosition();
+        if (position != null) {
+            CameraUpdate update = CameraUpdateFactory.newCameraPosition(position);
             map.moveCamera(update);
         }
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         mapView.onDestroy();
     }
+
     @Override
     public void onLowMemory() {
         super.onLowMemory();
@@ -135,9 +135,9 @@ public class MapFragment extends Fragment  {
     }
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
-        MapStateManager mapStateManager= new MapStateManager(getActivity());
+        MapStateManager mapStateManager = new MapStateManager(getActivity());
         mapStateManager.saveMapState(map);
     }
 }

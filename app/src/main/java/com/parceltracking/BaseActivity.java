@@ -1,13 +1,11 @@
 package com.parceltracking;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -17,58 +15,61 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.parceltracking.AppConstants.ActivityConstants;
 import com.parceltracking.image.AndroidLoadImageFromURLActivity;
-import com.parceltracking.login.LoginActivity;
-import com.parceltracking.signup.SignUpActivity;
+import com.parceltracking.user.profile.UpdateProfileActivity;
+import com.parceltracking.user.login.LoginActivity;
+import com.parceltracking.user.signup.RegisterActivity;
 
 /**
  * Created by ioan.contiu on 2/8/2016.
  */
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-  public  DrawerLayout mDrawerLayout;
-    public  NavigationView mNavigationView;
-    String currentFragment=null;
+    public DrawerLayout mDrawerLayout;
+    public NavigationView mNavigationView;
+    public Toolbar toolbar;
+    public ActionBarDrawerToggle mDrawerToggle;
 
-    public  Toolbar toolbar;
-    public  ActionBarDrawerToggle mDrawerToggle;
-
-     public  FragmentManager mFragmentManager;
-     public  FragmentTransaction mFragmentTransaction;
-    private int mSelectedId=R.id.nav_item_inbox;
+    public FragmentManager mFragmentManager;
+    public FragmentTransaction mFragmentTransaction;
+    private int mSelectedId = R.id.nav_item_home;
     public FrameLayout frameLayout;
-
-
-
+    public static AccountDetails loginState;
 
 
     private void initView() {
-        mNavigationView= (NavigationView) findViewById(R.id.navigation_drawer_container);
+        mNavigationView = (NavigationView) findViewById(R.id.navigation_drawer_container);
         mNavigationView.setNavigationItemSelectedListener(this);
-        mDrawerLayout= (DrawerLayout) findViewById(R.id.drawerLayout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         frameLayout = (FrameLayout) findViewById(R.id.containerView);
         mFragmentManager = getSupportFragmentManager();
-        toolbar= (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
     }
 
     private void itemSelection(int mSelectedId) {
         Intent intent;
         int callingActivity = getIntent().getIntExtra("calling-activity", 0);
-        switch(mSelectedId){
+        switch (mSelectedId) {
 
-         /*   case R.id.nav_item_inbox:
+            case R.id.nav_item_home:
                 mDrawerLayout.closeDrawer(GravityCompat.START);
-                Intent intent3 = new Intent(getApplicationContext(), TabsActivity.class);
-                startActivity(intent3);
-
+                if (callingActivity == ActivityConstants.HomeActivity)
+                    return;
+                intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("calling-activity", ActivityConstants.HomeActivity);
+                startActivity(intent);
                 break;
-*/
+
             case R.id.nav_item_sent:
-                if(callingActivity==ActivityConstants.ImageLoaderActivity)
+                if (callingActivity == ActivityConstants.ImageLoaderActivity)
                     return;
                 intent = new Intent(getApplicationContext(), AndroidLoadImageFromURLActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -80,19 +81,18 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_item_draft:
                 mDrawerLayout.closeDrawer(GravityCompat.START);
 
-                if(callingActivity==ActivityConstants.TabsActivity)
+                if (callingActivity == ActivityConstants.TabsActivity)
                     return;
                 intent = new Intent(getApplicationContext(), TabsActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("calling-activity", ActivityConstants.TabsActivity);
                 startActivity(intent);
-
                 break;
             case R.id.nav_item_signup:
                 mDrawerLayout.closeDrawer(GravityCompat.START);
-                if(callingActivity==ActivityConstants.SignUpActivity)
+                if (callingActivity == ActivityConstants.SignUpActivity)
                     return;
-                intent = new Intent(getApplicationContext(), SignUpActivity.class);
+                intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("calling-activity", ActivityConstants.SignUpActivity);
                 startActivity(intent);
@@ -100,11 +100,32 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_item_login:
                 mDrawerLayout.closeDrawer(GravityCompat.START);
-                if(callingActivity==ActivityConstants.LoginActivity)
+                if (callingActivity == ActivityConstants.LoginActivity)
                     return;
                 intent = new Intent(getApplicationContext(), LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("calling-activity", ActivityConstants.LoginActivity);
+                startActivity(intent);
+                break;
+
+            case R.id.nav_item_logout:
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+                loginState.saveLoginState(false);
+                loginState.deleteUserData();
+                Toast.makeText(BaseActivity.this, "Logout Succcesfully", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+                break;
+
+            case R.id.nav_item_update_profile:
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+                if (callingActivity == ActivityConstants.UpdateProfile)
+                    return;
+                intent = new Intent(getApplicationContext(), UpdateProfileActivity.class);
+                intent.putExtra("calling-activity", ActivityConstants.UpdateProfile);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 break;
 
@@ -115,98 +136,43 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loginState = new AccountDetails(getApplicationContext());
+        if (loginState.getLoginInformation()) {
+            setContentView(R.layout.activity_base_login);
+        } else {
+            setContentView(R.layout.activity_base);
+        }
 
-        setContentView(R.layout.activity_base);
         initView();
 
-        /*
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        mNavigationView = (NavigationView) findViewById(R.id.navigation_drawer_container) ;
-        btnLogIn=(Button) findViewById(R.id.Login);
-        btnSignUp=(Button) findViewById(R.id.SignUp);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-*/
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name) {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
+                super.onDrawerClosed(drawerView);
+                InputMethodManager inputMethodManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+            }
 
-        mDrawerToggle=new ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name,R.string.app_name);
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
+                super.onDrawerOpened(drawerView);
+                InputMethodManager inputMethodManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+            }
+        };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
         //default it set first item as selected
-     //  mSelectedId=savedInstanceState ==null ? R.id.nav_item_inbox: savedInstanceState.getInt("SELECTED_ID");
-        itemSelection(mSelectedId);
-      /*  mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,toolbar,R.string.app_name,
-                R.string.app_name);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-*/
-
-       /* mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                mDrawerLayout.closeDrawers();
-
-
-                if (menuItem.getItemId() == R.id.nav_item_sent) {
-                    FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new SentFragment()).commit();
-
-                }
-
-                if (menuItem.getItemId() == R.id.nav_item_inbox) {
-                    FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
-                    xfragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
-                }
-
-
-                return true;
-            }
-
-        });
-*/
-
-        /**
-         * Lets inflate the very first fragment
-         * Here , we are inflating the TabFragment as the first Fragment
-         */
-
-
-
-/*
-        btnLogIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
-                startActivity(intent);
-            }
-        });
-*/
+        //  mSelectedId=savedInstanceState ==null ? R.id.nav_item_inbox: savedInstanceState.getInt("SELECTED_ID");
+        // itemSelection(mSelectedId);
 
     }
 
 
-/*
-    @Override
-    public void setContentView(final int layoutResID) {
-        // Your base layout here
-        fullLayout= (LinearLayout) getLayoutInflater().inflate(R.layout.activity_base, null);
-        actContent= (FrameLayout) fullLayout.findViewById(R.id.containerView);
-
-        // Setting the content of layout your provided to the act_content frame
-        getLayoutInflater().inflate(layoutResID, actContent, true);
-        super.setContentView(fullLayout);
-
-        // here you can get your drawer buttons and define how they
-        // should behave and what must they do, so you won't be
-        // needing to repeat it in every activity class
-    }
-*/
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -219,23 +185,22 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
+
         mDrawerToggle.onConfigurationChanged(newConfig);
-        if(newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
             toolbar.setVisibility(View.GONE);
-        }
-        else
-        {
+        } else {
             toolbar.setVisibility(View.VISIBLE);
         }
+        super.onConfigurationChanged(newConfig);
     }
 
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         menuItem.setChecked(true);
-        mSelectedId=menuItem.getItemId();
+        mSelectedId = menuItem.getItemId();
         itemSelection(mSelectedId);
         return true;
     }
@@ -244,7 +209,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
         //save selected item so it will remains same even after orientation change
-        outState.putInt("SELECTED_ID",mSelectedId);
+        outState.putInt("SELECTED_ID", mSelectedId);
     }
 
     @Override

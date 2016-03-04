@@ -14,5 +14,15 @@
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_margin="10dip"/>
+    <ImageView android:id="@+id/image2"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_margin="10dip"/>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    </ListView>
 
 </LinearLayout>

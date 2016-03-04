@@ -1,0 +1,53 @@
+
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/drawerLayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fitsSystemWindows="true"
+tools:context=".MainActivity">
+
+<!--Main content-->
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ColorPrimary"
+        android:id="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Parcel Tracking" />
+
+
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/containerView">
+
+
+    </FrameLayout>
+
+</LinearLayout>
+
+<!--Navigation Drawer-->
+<android.support.design.widget.NavigationView
+    android:id="@+id/navigation_drawer_container"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:itemTextColor="@android:color/holo_blue_dark"
+    app:headerLayout="@layout/header"
+    app:menu="@menu/drawermenulogin"
+    >
+
+
+</android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>

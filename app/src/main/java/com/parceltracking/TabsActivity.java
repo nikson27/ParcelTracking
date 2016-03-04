@@ -1,6 +1,8 @@
 package com.parceltracking;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
 
 /**
  * Created by ioan.contiu on 2/11/2016.
@@ -31,5 +33,12 @@ public class TabsActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+
     }
 }

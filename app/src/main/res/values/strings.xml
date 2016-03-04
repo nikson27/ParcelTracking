@@ -4,6 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
+    <string name="search">Search</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -24,4 +25,14 @@
 
     <!-- Query strings-->
     <string name="login">http://localhost:81/TrackingParcelBackEnd/login.php</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+    <string name="str_phone">Phone</string>
+    <string name="str_city">City</string>
+    <string name="str_addr_line_1">Address Line 1</string>
+    <string name="str_addr_line_2">Address Line 2</string>
+    <string name="str_state">State</string>
+    <string name="str_credit_limit">Credit Limit</string>
+    <string name="str_save">Save</string>
+    <string name="str_cancel">Cancel</string>
 </resources>
