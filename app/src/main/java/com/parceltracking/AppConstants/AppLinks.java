@@ -11,4 +11,7 @@ public class AppLinks {
     // Server user register url
     public static String URL_REGISTER = "http://icontiu.comule.com/user/register.php";
 
+    // Server user update Profile url
+    public static String URL_UPDATE_PROFILE = "http://icontiu.comule.com/user/update_profile.php";
+
 }

@@ -4,6 +4,7 @@ package com.parceltracking.user;
  * Created by ioan.contiu on 2/24/2016.
  */
 public class UserDetails {
+    private int uid;
     private String fName;
     private String lName;
     private String phone;
@@ -14,6 +15,7 @@ public class UserDetails {
     private String credit;
 
     public UserDetails() {
+        this.uid = 0;
         this.fName = null;
         this.lName = null;
         this.phone = null;
@@ -24,7 +26,8 @@ public class UserDetails {
         this.credit = null;
     }
 
-    public UserDetails(String fName, String lName, String phone, String city, String state, String addressLine1, String addressLine2, String credit) {
+    public UserDetails(int uid, String fName, String lName, String phone, String city, String state, String addressLine1, String addressLine2, String credit) {
+        this.uid = uid;
         this.fName = fName;
         this.lName = lName;
         this.phone = phone;
@@ -65,6 +68,10 @@ public class UserDetails {
 
     public String getCredit() {
         return this.credit;
+    }
+
+    public int getUid (){
+        return this.uid;
     }
 
 }

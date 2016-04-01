@@ -1,6 +1,7 @@
 package com.parceltracking.user.signup;
 
 import com.android.volley.toolbox.Volley;
+import com.parceltracking.AppConstants.AppConstants;
 import com.parceltracking.AppConstants.AppLinks;
 import com.parceltracking.BaseActivity;
 
@@ -33,6 +34,7 @@ import java.util.Map;
 
 
 public class RegisterActivity extends BaseActivity {
+
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnRegister;
     private TextView btnLinkToLogin;
@@ -47,9 +49,8 @@ public class RegisterActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //  setContentView(R.layout.activity_signup);
-        getLayoutInflater().inflate(R.layout.activity_signup, frameLayout);
 
+        getLayoutInflater().inflate(R.layout.activity_signup, frameLayout);
         inputFName = (EditText) findViewById(R.id.fname);
         inputLName = (EditText) findViewById(R.id.lname);
         inputEmail = (EditText) findViewById(R.id.input_email);
@@ -89,7 +90,10 @@ public class RegisterActivity extends BaseActivity {
         });
 
     }
-
+/**
+ * Validate DataInput
+ *
+ * **/
     public boolean validate() {
         boolean valid = true;
 
@@ -145,7 +149,7 @@ public class RegisterActivity extends BaseActivity {
     }
 
     /**
-     * Function to store user in MySQL database will post params(tag, name,
+     * Function to store user in MySQL database will post params(fname, lname,
      * email, password) to register url
      */
     private void registerUser(final String fname, final String lname, final String email,
@@ -164,9 +168,10 @@ public class RegisterActivity extends BaseActivity {
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    boolean error = jObj.getBoolean(AppConstants.ERROR);
+                    String errorMsg = jObj.getString(AppConstants.ERROR_MSG);
                     if (!error) {
-                        Toast.makeText(getApplicationContext(), "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), errorMsg, Toast.LENGTH_LONG).show();
 
                         // Launch login activity
                         Intent intent = new Intent(
@@ -178,7 +183,7 @@ public class RegisterActivity extends BaseActivity {
 
                         // Error occurred in registration. Get the error
                         // message
-                        String errorMsg = jObj.getString("error_msg");
+
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }
@@ -201,12 +206,11 @@ public class RegisterActivity extends BaseActivity {
             @Override
             protected Map<String, String> getParams() {
                 // Posting params to register url
-                //TODO
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("fname", fname);
-                params.put("lname", lname);
-                params.put("email", email);
-                params.put("password", password);
+                params.put(AppConstants.FIRST_NAME, fname);
+                params.put(AppConstants.LAST_NAME, lname);
+                params.put(AppConstants.EMAIL, email);
+                params.put(AppConstants.PASSWORD, password);
 
                 return params;
             }

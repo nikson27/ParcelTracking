@@ -20,6 +20,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.parceltracking.AccountDetails;
+import com.parceltracking.AppConstants.ActivityConstants;
+import com.parceltracking.AppConstants.AppConstants;
 import com.parceltracking.AppConstants.AppLinks;
 import com.parceltracking.BaseActivity;
 import com.parceltracking.MainActivity;
@@ -39,9 +41,7 @@ import java.util.Map;
 
 public class LoginActivity extends BaseActivity {
     private static final String TAG = "LoginActivity";
-    private static final int REQUEST_SIGNUP = 0;
     private ProgressDialog pDialog;
-    RequestQueue requestQueue;
     EditText emailText;
     EditText passwordText;
     Button loginButton;
@@ -50,13 +50,10 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.login_lay);
         getLayoutInflater().inflate(R.layout.activity_login, frameLayout);
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
-
-        // requestQueue = Volley.newRequestQueue(this);
 
         emailText = (EditText) findViewById(R.id.input_email);
         passwordText = (EditText) findViewById(R.id.input_password);
@@ -95,7 +92,7 @@ public class LoginActivity extends BaseActivity {
             return;
         }
 
-        // loginButton.setEnabled(false);
+        loginButton.setEnabled(false);
 
         pDialog.setMessage("Login in ...");
         showDialog();
@@ -114,23 +111,26 @@ public class LoginActivity extends BaseActivity {
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    boolean error = jObj.getBoolean(AppConstants.ERROR);
+                    String errorMsg = jObj.getString(AppConstants.ERROR_MSG);
+                    int uid=jObj.getInt(AppConstants.UID);
                     if (!error) {
-                        JSONObject user = jObj.getJSONObject("user");
 
-                        Toast.makeText(LoginActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
+                        JSONObject user = jObj.getJSONObject(AppConstants.USER);
+                        Toast.makeText(LoginActivity.this, errorMsg, Toast.LENGTH_SHORT).show();
                         AccountDetails loginInfo = new AccountDetails(getApplicationContext());
-                        loginInfo.saveLoginState(true);
+                        loginInfo.saveLoginState(uid);
                         loginInfo.saveUserInformation(user);
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.putExtra(AppConstants.CALLING_ACTIVITY, ActivityConstants.HomeActivity);
                         startActivity(intent);
                         finish();
                     } else {
 
                         // Error occurred in registration. Get the error
                         // message
-                        String errorMsg = jObj.getString("error_msg");
+
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }
@@ -153,10 +153,10 @@ public class LoginActivity extends BaseActivity {
             @Override
             protected Map<String, String> getParams() {
                 // Posting params to register url
-                //TODO
+
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("email", email);
-                params.put("password", password);
+                params.put(AppConstants.EMAIL, email);
+                params.put(AppConstants.PASSWORD, password);
 
 
                 return params;
@@ -167,42 +167,7 @@ public class LoginActivity extends BaseActivity {
         // Adding request to request queue
         Volley.newRequestQueue(getApplicationContext()).add(strReq);
 
-    }/*
-    private  Map<String, String> toMap(JSONObject object) throws JSONException {
-        Map<String, String> map = new HashMap<String, String>();
-
-        Iterator<String> keysItr = object.keys();
-        while(keysItr.hasNext()) {
-            String key = keysItr.next();
-            Object value = object.get(key);
-
-            if(value instanceof JSONArray) {
-                value = toList((JSONArray) value);
-            }
-
-            else if(value instanceof JSONObject) {
-                value = toMap((JSONObject) value);
-            }
-            map.put(key, value.toString());
-        }
-        return map;
     }
-    private List<Object> toList(JSONArray array) throws JSONException {
-        List<Object> list = new ArrayList<Object>();
-        for(int i = 0; i < array.length(); i++) {
-            Object value = array.get(i);
-            if(value instanceof JSONArray) {
-                value = toList((JSONArray) value);
-            }
-
-            else if(value instanceof JSONObject) {
-                value = toMap((JSONObject) value);
-            }
-            list.add(value);
-        }
-        return list;
-    }
-*/
     private void showDialog() {
         if (!pDialog.isShowing())
             pDialog.show();
@@ -213,17 +178,6 @@ public class LoginActivity extends BaseActivity {
             pDialog.dismiss();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_SIGNUP) {
-            if (resultCode == RESULT_OK) {
-
-                // TODO: Implement successful signup logic here
-                // By default we just finish the Activity and log them in automatically
-                this.finish();
-            }
-        }
-    }
 
     @Override
     public void onBackPressed() {

@@ -1,36 +1,24 @@
 package com.parceltracking.user.profile;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.parceltracking.AccountDetails;
+import com.parceltracking.AppConstants.AppConstants;
 import com.parceltracking.AppConstants.AppLinks;
 import com.parceltracking.BaseActivity;
 import com.parceltracking.R;
 import com.parceltracking.user.UserDetails;
-import com.parceltracking.user.login.LoginActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,7 +33,6 @@ public class UpdateProfileActivity extends BaseActivity {
 
     private final String TAG="Update Activity";
     private ProgressDialog pDialog;
-    RequestQueue requestQueue;
     EditText fname;
     EditText lname;
     EditText phone;
@@ -61,6 +48,8 @@ public class UpdateProfileActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_update_profile, frameLayout);
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
         initView();
         updateView();
 
@@ -76,9 +65,10 @@ public class UpdateProfileActivity extends BaseActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Toast.makeText(UpdateProfileActivity.this, "saving", Toast.LENGTH_SHORT).show();
-                    save();
-                    finish();
+               // Toast.makeText(UpdateProfileActivity.this, "saving", Toast.LENGTH_SHORT).show();
+                save();
+
+                finish();
             }
         });
 
@@ -95,12 +85,11 @@ public class UpdateProfileActivity extends BaseActivity {
         String saveState = state.getText().toString();
         String saveAddrln2 = addrln2.getText().toString();
         String saveCredit = creditLimit.getText().toString();
-        UserDetails uDetails = new UserDetails(savefName, savelName, savePhone, saveCity, saveState, saveAddrln1, saveAddrln2, saveCredit);
+        UserDetails uDetails = new UserDetails(details.getLoginInformation(), savefName, savelName, savePhone, saveCity, saveState, saveAddrln1, saveAddrln2, saveCredit);
         details.saveUserInformation(uDetails);
+        SaveOnServer(String.valueOf(details.getLoginInformation()), savefName, savelName, savePhone, saveCity, saveState, saveAddrln1, saveAddrln2, saveCredit);
 
     }
-
-
 
     private void initView() {
         fname = (EditText) findViewById(R.id.update_fname);
@@ -150,33 +139,33 @@ public class UpdateProfileActivity extends BaseActivity {
         }
 
     }
-/*
-    private void registerUser(final String fname, final String lname, final String email,
-                              final String password) {
+
+    private void SaveOnServer(final String id, final String fName, final String lName,final String phone,final String city,final  String state,final String addrln1,final String addrln2,final String credit) {
 
         pDialog.setMessage("Updating ...");
-        showDialog();
+       // showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
-                AppLinks.URL_REGISTER, new Response.Listener<String>() {
+                AppLinks.URL_UPDATE_PROFILE, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Register Response: " + response.toString());
-                hideDialog();
+                Log.d(TAG, "Update Response: " + response.toString());
+              //  hideDialog();
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    boolean error = jObj.getBoolean(AppConstants.ERROR);
+                    String errorMsg = jObj.getString(AppConstants.ERROR_MSG);
                     if (!error) {
-                        Toast.makeText(getApplicationContext(), "Update done!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), errorMsg, Toast.LENGTH_LONG).show();
 
 
                     } else {
 
                         // Error occurred in registration. Get the error
                         // message
-                        String errorMsg = jObj.getString("error_msg");
+
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                         return;
@@ -190,22 +179,27 @@ public class UpdateProfileActivity extends BaseActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, "Registration Error: " + error.getMessage());
+                Log.e(TAG, "Updating Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();
-                hideDialog();
+              //  hideDialog();
             }
         }) {
 
             @Override
             protected Map<String, String> getParams() {
                 // Posting params to register url
-                //TODO
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("fname", fname);
-                params.put("lname", lname);
-                params.put("email", email);
-                params.put("password", password);
+                params.put(AppConstants.FIRST_NAME, fName);
+                params.put(AppConstants.LAST_NAME, lName);
+                params.put(AppConstants.PHONE, phone);
+                params.put(AppConstants.CITY, city);
+                params.put(AppConstants.UID, id);
+                params.put(AppConstants.STATE, state);
+                params.put(AppConstants.ADDRESSLINE1, addrln1);
+                params.put(AppConstants.ADDRESSLINE2, addrln2);
+                params.put(AppConstants.CREDIT, credit);
+
 
                 return params;
             }
@@ -215,7 +209,7 @@ public class UpdateProfileActivity extends BaseActivity {
         // Adding request to request queue
         Volley.newRequestQueue(getApplicationContext()).add(strReq);
 
-    }*/
+    }
     private void showDialog() {
         if (!pDialog.isShowing())
             pDialog.show();

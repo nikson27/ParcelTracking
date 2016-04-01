@@ -7,16 +7,17 @@
         android:icon="@drawable/inbox"
         android:title="Home" />
 
+
+
+    <item
+        android:id="@+id/nav_item_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search" />
+
     <item
         android:id="@+id/nav_item_sent"
         android:icon="@drawable/sent"
         android:title="Image Load" />
-
-    <item
-        android:id="@+id/nav_item_draft"
-        android:icon="@drawable/draft"
-        android:title="Search" />
-
 
     <group android:id="@+id/group_settings_id">
 
@@ -32,11 +33,11 @@
 
         <item
             android:id="@+id/nav_item_login"
-            android:icon="@drawable/common_google_signin_btn_icon_dark"
+            android:icon="@drawable/log_in"
             android:title="Login" />
         <item
             android:id="@+id/nav_item_signup"
-            android:icon="@drawable/common_google_signin_btn_icon_light"
+            android:icon="@drawable/sign_up"
             android:title="Register" />
 
     </group>

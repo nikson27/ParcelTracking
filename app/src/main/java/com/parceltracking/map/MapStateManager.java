@@ -24,7 +24,7 @@ public class MapStateManager {
     private SharedPreferences mapStatePrefs;
 
     public MapStateManager(Context context) {
-        mapStatePrefs = context.getSharedPreferences(PREFS_NAME, context.MODE_PRIVATE);
+        mapStatePrefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
     }
 
     public void saveMapState(GoogleMap map) {

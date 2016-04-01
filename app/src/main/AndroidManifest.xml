@@ -50,7 +50,7 @@
         <activity android:name="com.parceltracking.user.signup.RegisterActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name="com.parceltracking.user.profile.UpdateProfileActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"/>
         <activity android:name="com.parceltracking.image.AndroidLoadImageFromURLActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
 
