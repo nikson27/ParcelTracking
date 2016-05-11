@@ -11,5 +11,6 @@ public class ActivityConstants {
     public static final int ImageLoaderActivity = 4;
     public static final int HomeActivity = 5;
     public static final int UpdateProfile = 6;
+    public static final int MyOrders = 6;
 }
 

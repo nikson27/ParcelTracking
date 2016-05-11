@@ -14,6 +14,9 @@
     <item android:title="Image Load"
           android:id="@+id/nav_item_sent"
           android:icon="@drawable/sent"/>
+    <item android:title="My Orders"
+        android:id="@+id/nav_item_my_orders"
+        android:icon="@drawable/common_google_signin_btn_icon_light_disabled"/>
 
 
 

@@ -202,6 +202,15 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 break;
+            case R.id.nav_item_my_orders:
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+                if (callingActivity == ActivityConstants.MyOrders)
+                    return;
+                intent = new Intent(getApplicationContext(), OrderHistory.class);
+                intent.putExtra(AppConstants.CALLING_ACTIVITY, ActivityConstants.MyOrders);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                break;
 
         }
 
