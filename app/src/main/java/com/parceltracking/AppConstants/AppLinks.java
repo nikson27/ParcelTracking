@@ -14,4 +14,6 @@ public class AppLinks {
     // Server user update Profile url
     public static String URL_UPDATE_PROFILE = "http://icontiu.comule.com/user/update_profile.php";
 
+    public static String URL_ORDER_HISTORY = "http://icontiu.comule.com/user/order_history.php";
+
 }

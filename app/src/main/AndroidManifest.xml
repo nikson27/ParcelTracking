@@ -55,7 +55,7 @@
         <activity android:name="com.parceltracking.image.AndroidLoadImageFromURLActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name="com.parceltracking.OrderHistory"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
+            android:configChanges="keyboardHidden|screenSize"/>
 
 
         <meta-data

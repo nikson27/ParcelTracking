@@ -1,7 +1,11 @@
 package com.parceltracking;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.android.volley.Cache;
@@ -10,9 +14,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.parceltracking.AppConstants.AppLinks;
 import com.parceltracking.controllers.AppController;
-import com.parceltracking.helpers.FeedListAdapter;
-import com.parceltracking.model.FeedItem;
+import com.parceltracking.orderhistory.FeedItem;
+import com.parceltracking.orderhistory.FeedListAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,8 +36,6 @@ public class OrderHistory extends BaseActivity {
     private ListView listView;
     private FeedListAdapter listAdapter;
     private List<FeedItem> feedItems;
-    private String URL_FEED = "http://api.androidhive.info/feed/feed.json";
-
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,21 +43,21 @@ public class OrderHistory extends BaseActivity {
        // setContentView(R.layout.activity_order_history);
         getLayoutInflater().inflate(R.layout.activity_order_history, frameLayout);
         listView = (ListView) findViewById(R.id.list);
-
         feedItems = new ArrayList<FeedItem>();
 
         listAdapter = new FeedListAdapter(this, feedItems);
         listView.setAdapter(listAdapter);
 
-        // These two lines not needed,
-        // just to get the look of facebook (changing background color & hiding the icon)
-     //   getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3b5998")));
-      //  getActionBar().setIcon(
-        //        new ColorDrawable(getResources().getColor(android.R.color.transparent)));
 
-        // We first check for cached request
+        MakeListView();
+
+
+    }
+
+    private void MakeListView(){
+
         Cache cache = AppController.getInstance().getRequestQueue().getCache();
-        Cache.Entry entry = cache.get(URL_FEED);
+        Cache.Entry entry = cache.get(AppLinks.URL_ORDER_HISTORY);
         if (entry != null) {
             // fetch the data from cache
             try {
@@ -71,7 +74,7 @@ public class OrderHistory extends BaseActivity {
         } else {
             // making fresh volley request and getting json
             JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET,
-                    URL_FEED, null, new Response.Listener<JSONObject>() {
+                    AppLinks.URL_ORDER_HISTORY, null, new Response.Listener<JSONObject>() {
 
                 @Override
                 public void onResponse(JSONObject response) {
@@ -91,9 +94,7 @@ public class OrderHistory extends BaseActivity {
             // Adding request to volley request queue
             AppController.getInstance().addToRequestQueue(jsonReq);
         }
-
     }
-
     /**
      * Parsing json reponse and passing the data to feed view list adapter
      * */
@@ -137,4 +138,28 @@ public class OrderHistory extends BaseActivity {
         return true;
     }
 */
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+
+
+    }
+
 }
